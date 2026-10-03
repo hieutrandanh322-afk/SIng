@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-cinzel: 'Cinzel', serif;
+  --color-imperial-950: #330808;
+  --color-imperial-900: #460C0C;
+  --color-imperial-800: #6B1212;
+  --color-imperial-700: #881818;
+  --color-imperial-600: #A82020;
+  --color-imperial-500: #CA2929;
+  --color-gold-200: #F6E5B8;
+  --color-gold-300: #ECCC87;
+  --color-gold-400: #DFB65D;
+  --color-gold-500: #C99A36;
+  --color-silk-beige: #FAF2DF;
+  --color-silk-beige-dark: #F3E7CD;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FAF2DF;
+  color: #2D2013;
+}
+
+.font-serif-vintage {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-display-royal {
+  font-family: 'Cinzel', Georgia, serif;
+}
+
+/* Nền Vàng Be Nhạt kết hợp họa tiết chấm vi hạt Đông Sơn */
+.bg-silk-paper {
+  background-color: #FAF2DF;
+  background-image: 
+    radial-gradient(rgba(136, 24, 24, 0.04) 1px, transparent 0),
+    radial-gradient(rgba(184, 115, 51, 0.03) 1px, transparent 0);
+  background-size: 28px 28px, 56px 56px;
+  background-position: 0 0, 14px 14px;
+}
+
+/* Khối Nổi Màu Đỏ Sơn Son Thếp Vàng (Royal Vietnamese Red Lacquer Blocks) */
+.elevated-red-card {
+  background: linear-gradient(145deg, #881818 0%, #6E1010 60%, #520909 100%);
+  color: #FFFDF8;
+  border: 1px solid rgba(230, 198, 115, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(88, 12, 12, 0.25), 0 8px 10px -6px rgba(88, 12, 12, 0.2);
+}
+
+.elevated-red-card:hover {
+  border-color: rgba(230, 198, 115, 0.7);
+  box-shadow: 0 14px 30px -5px rgba(88, 12, 12, 0.35);
+}
+
+/* Custom scrollbar matching imperial red lacquer & gold */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F3E7CD;
+}
+::-webkit-scrollbar-thumb {
+  background: #881818;
+  border-radius: 9999px;
+  border: 1px solid #FAF2DF;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A82020;
+}

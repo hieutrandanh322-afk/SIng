@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _origFetch = typeof window !== 'undefined' && window.fetch ? window.fetch.bind(window) : null;
+          var descriptor = {
+            get: function() {
+              return _origFetch;
+            },
+            set: function(fn) {
+              _origFetch = fn;
+            },
+            configurable: true,
+            enumerable: true
+          };
+          Object.defineProperty(window, 'fetch', descriptor);
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            try {
+              Object.defineProperty(Window.prototype, 'fetch', descriptor);
+            } catch (_) {}
+          }
+        } catch (e) {
+          // Ignore
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Việt Phục Remix — Di Sản & Sáng Tạo Thời Trang Cổ Phong</title>
+    <meta name="description" content="Nền tảng bảo tàng số di sản trang phục Việt, màng lọc văn hóa AI, thử đồ cá nhân hóa và lookbook cổ phong đương đại." />
+    <meta property="og:title" content="Việt Phục Remix — Di Sản & Sáng Tạo Thời Trang Cổ Phong" />
+    <meta property="og:description" content="Nền tảng bảo tàng số di sản trang phục Việt, màng lọc văn hóa AI, thử đồ cá nhân hóa và lookbook cổ phong đương đại." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#FAF2DF] text-[#261E14] antialiased selection:bg-[#881818] selection:text-[#FAF2DF]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
